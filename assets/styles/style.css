@@ -1,0 +1,142 @@
+/** Always include meyerreset.css file to reset the browser specific styles and start from scratch **/
+
+/* Define color variables in :root */
+:root {
+  --header-ht: 1rem;
+  --footer-ht: 2rem;
+
+  /* Colors */
+  --shadow-gray: grey;
+  --border: #b2b2b2;
+  --border-error: #c94c4c;
+  --form-text-color: #3e4444;
+}
+
+/* box-sizing for all elements */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Common Styles */
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-center-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.box-shadow-sm {
+  box-shadow: 0 0 5px var(--shadow-gray);
+}
+
+.border-radius-half-rem {
+  border-radius: 0.5rem;
+}
+
+button {
+  background-color: #4a7724;
+  margin: 0.5rem 0;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 5px gray;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: ease-in 100ms;
+}
+
+button:hover {
+  opacity: 1;
+  box-shadow: 0 0 10px gray;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* unvisited link */
+a:link {
+  color: rgba(72, 118, 35, 0.9);
+  opacity: 0.9;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+  opacity: 1;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgba(72, 118, 35, 1);
+  opacity: 1;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+  opacity: 1;
+}
+
+/* End of Common styles */
+
+/* Set height and width for html and body */
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Define font style for html */
+html {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+}
+
+header {
+  height: var(--header-ht);
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* Style for footer */
+footer {
+  height: var(--footer-ht);
+  width: 100%;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for footer icons */
+footer > * {
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+/* Animation for footer icons on hover */
+.footer-icon {
+  height: 1.2rem;
+  width: 1.2rem;
+  transition: transform 1s ease;
+}
+
+/* Animation for footer icons on hover */
+.footer-icon:hover {
+  scale: 1.2;
+  transform: rotate(360deg);
+}
+
+main {
+}
