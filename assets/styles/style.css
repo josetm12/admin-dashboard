@@ -1,126 +1,62 @@
-/** Always include meyerreset.css file to reset the browser specific styles and start from scratch **/
-
 /* Define color variables in :root */
 :root {
   --header-ht: 1rem;
   --footer-ht: 2rem;
+
+  --nav-bar-thickness: 3rem;
 
   /* Colors */
   --shadow-gray: grey;
   --border: #b2b2b2;
   --border-error: #c94c4c;
   --form-text-color: #3e4444;
-}
 
-/* box-sizing for all elements */
-* {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* Common Styles */
-
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.flex-center-center {
-  justify-content: center;
-  align-items: center;
-}
-
-.box-shadow-sm {
-  box-shadow: 0 0 5px var(--shadow-gray);
-}
-
-.border-radius-half-rem {
-  border-radius: 0.5rem;
-}
-
-button {
-  background-color: #4a7724;
-  margin: 0.5rem 0;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  box-shadow: 0 0 5px gray;
-  cursor: pointer;
-  opacity: 0.9;
-  transition: ease-in 100ms;
-}
-
-button:hover {
-  opacity: 1;
-  box-shadow: 0 0 10px gray;
-}
-
-a {
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* unvisited link */
-a:link {
-  color: rgba(72, 118, 35, 0.9);
-  opacity: 0.9;
-}
-
-/* visited link */
-a:visited {
-  color: green;
-  opacity: 1;
-}
-
-/* mouse over link */
-a:hover {
-  color: rgba(72, 118, 35, 1);
-  opacity: 1;
-}
-
-/* selected link */
-a:active {
-  color: blue;
-  opacity: 1;
-}
-
-/* End of Common styles */
-
-/* Set height and width for html and body */
-html,
-body {
-  height: 100%;
-  width: 100%;
+  /* Color palette */
+  --dark-blue: #2a4d69;
+  --light-blue: #4b86b4;
+  --main-bg-darker: #adcbe3;
+  --main-bg: #e7eff6;
+  --header: #63ace5;
 }
 
 /* Define font style for html */
 html {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 18px;
+  font-size: 16px;
 }
 
-header {
-  height: var(--header-ht);
+/* Set height and width for html and body */
+html,
+body {
+  min-height: 100%;
   width: 100%;
-  margin-bottom: 0.5rem;
+}
+
+body {
+  background-color: var(--main-bg);
+}
+
+.header {
+  background-color: var(--header);
+  color: white;
 }
 
 /* Style for footer */
 footer {
-  height: var(--footer-ht);
   width: 100%;
-  margin-top: 0.5rem;
+}
+
+footer > .author-credits {
+  height: var(--footer-ht);
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin-bottom: 5rem;
 }
 
 /* Style for footer icons */
-footer > * {
+.author-credits > * {
   cursor: pointer;
   margin: 0 0.5rem;
 }
@@ -139,4 +75,75 @@ footer > * {
 }
 
 main {
+  min-height: calc(100vh - var(--footer-ht));
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(5rem, auto);
+  grid-auto-rows: 1fr;
+}
+
+main > * {
+  border: 1px solid yellowgreen;
+}
+
+.header.logo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.header.logo > img {
+  margin: 0 0.5rem;
+  height: 4rem;
+}
+
+.nav-bar {
+  position: fixed;
+  z-index: 1;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 5rem;
+
+  border-radius: 2rem 2rem 0 0;
+  box-shadow: 0 0 5px var(--shadow-gray);
+  background-color: var(--main-bg-darker);
+}
+
+.nav-bar > ul {
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+}
+
+.nav-bar span {
+  display: none;
+}
+
+.nav-bar img {
+  height: 3rem;
+  border-radius: 2rem;
+  background: #63ace5;
+  padding: 0.5rem;
+  outline: 5px solid #075985;
+  transition: all 100ms;
+}
+
+.nav-bar a:hover > img {
+  box-shadow: 0px 5px 10px #082f49;
+}
+
+.nav-bar a.active > img {
+  padding: 0.25rem;
+  border: 0.25rem solid #facc15;
 }

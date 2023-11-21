@@ -9,3 +9,72 @@
 /* Phone Portrait */
 @media only screen and (max-width: 767px) {
 }
+
+/* Smaller screens */
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: 15rem 1fr 20rem;
+    grid-template-rows: 5rem 1fr 1fr;
+  }
+
+  .header {
+    grid-row: 1/2;
+  }
+
+  .logo {
+    grid-column: 1/2;
+  }
+
+  .toolbar {
+    grid-column: 2/3;
+  }
+
+  .user-info {
+    grid-column: 3/4;
+  }
+
+  .meals-ct {
+    padding-left: 5rem;
+    grid-row: 2/-1;
+    grid-column: 1/3;
+  }
+
+  .accouncements {
+    grid-row: 2/3;
+    grid-column: 3/4;
+  }
+
+  .trending {
+    grid-row: 3/4;
+    grid-column: 3/4;
+  }
+
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 5rem;
+    height: 100vh;
+    padding-top: 7rem;
+
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  footer {
+    box-shadow: 0px -0.15rem 5px var(--shadow-gray);
+  }
+
+  footer > .author-credits {
+    margin-bottom: 0;
+  }
+
+  .nav-bar > ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+}
